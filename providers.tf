@@ -5,6 +5,12 @@ terraform {
         version = "~> 4.0"
     }
   }
+   backend "azurerm" {
+    resource_group_name  = "imigrant-help"
+    storage_account_name = "jagseerstg123"
+    container_name       = "containertf-stg"
+    key                  = "stg.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
